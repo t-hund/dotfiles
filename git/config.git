@@ -1,0 +1,13 @@
+[user]
+    name = Tommy Vagbratt
+    email = tommy@vagbratt.se
+[core]
+    editor = vim
+[color]
+    ui = true
+[merge]
+    tool = vimdiff
+[pull]
+    rebase = true
+[push]
+    default = simple
