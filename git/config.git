@@ -14,7 +14,7 @@
 [alias]
     b = branch
     st = status
-    ci = commit
+    ci = "!. $DOTFILES/git/commit.bash && git_commit"
     co = checkout
     di = diff
     dc = diff --cached
