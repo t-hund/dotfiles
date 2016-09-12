@@ -11,3 +11,19 @@
     rebase = true
 [push]
     default = simple
+[alias]
+    b = branch
+    st = status
+    ci = commit
+    co = checkout
+    di = diff
+    dc = diff --cached
+    dh = diff HEAD~1
+    aa = add --all
+    fa = fetch --all
+    ff = merge --ff-only
+
+    pom = push origin master
+    noff = merge --no-ff
+    pullff = pull --ff-only
+    amend = commit --amend
