@@ -42,3 +42,6 @@
     ra = !git r --all
     l = "!. $HOME/dotfiles_repo/git/log.bash && git_log_pretty"
     la = !git l --all
+
+    # Leaderboard.
+    leaderboard = shortlog --numbered --summary
