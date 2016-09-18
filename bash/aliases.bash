@@ -15,3 +15,6 @@ alias e="$EDITOR"
 alias v="view"
 alias g="git"
 alias j="z"
+
+# Get week number
+alias week='date +%V'
