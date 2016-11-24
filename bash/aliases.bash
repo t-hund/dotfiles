@@ -28,3 +28,5 @@ alias week='date +%V'
 
 # Load alias modules
 source $DOTFILES/bash/list_files_and_directories.bash
+source $DOTFILES/bash/navigation.bash
+
