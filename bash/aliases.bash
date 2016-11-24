@@ -23,15 +23,9 @@ alias tree="tree | less --quit-if-one-screen --no-init --RAW-CONTROL-CHARS --cho
 
 alias r="R --no-save --quiet"
 
-# Get week number
-alias week='date +%V'
-
 # Load alias modules
 source $DOTFILES/bash/list_files_and_directories.bash
 source $DOTFILES/bash/navigation.bash
 source $DOTFILES/bash/openpdf.bash
 source $DOTFILES/bash/create_directories.bash
-
-# Stopwatch
-alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
-
+source $DOTFILES/bash/time.bash
