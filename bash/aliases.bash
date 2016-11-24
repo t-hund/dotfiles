@@ -19,6 +19,8 @@ alias v="view"
 alias g="git"
 alias j="z"
 
+alias tree="tree | less --quit-if-one-screen --no-init --RAW-CONTROL-CHARS --chop-long-lines"
+
 # Get week number
 alias week='date +%V'
 
