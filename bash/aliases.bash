@@ -30,4 +30,5 @@ alias week='date +%V'
 source $DOTFILES/bash/list_files_and_directories.bash
 source $DOTFILES/bash/navigation.bash
 source $DOTFILES/bash/openpdf.bash
+source $DOTFILES/bash/create_directories.bash
 
