@@ -32,3 +32,6 @@ source $DOTFILES/bash/navigation.bash
 source $DOTFILES/bash/openpdf.bash
 source $DOTFILES/bash/create_directories.bash
 
+# Stopwatch
+alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
+
