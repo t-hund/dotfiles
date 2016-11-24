@@ -21,6 +21,8 @@ alias j="z"
 
 alias tree="tree | less --quit-if-one-screen --no-init --RAW-CONTROL-CHARS --chop-long-lines"
 
+alias r="R --no-save --quiet"
+
 # Get week number
 alias week='date +%V'
 
