@@ -13,3 +13,5 @@ alias month='date +%B'
 # Get today's day, date and year
 alias today='date +"%A, %B %-d, %Y"'
 
+# display calender of current month (week start with monday)
+alias cal='gcal --starting-day=1'
