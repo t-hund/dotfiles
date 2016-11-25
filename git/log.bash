@@ -1,64 +1,59 @@
 #!/bin/bash
+# Sweet git log format found in gary bernhardt's dotfiles
+# * ca5d121  (2 months)  <Tommy Vagbratt>   This is where it all begins...
 
-# Log output:
-#
-# * 51c333e    (12 days)    <Gary Bernhardt>   add vim-eunuch
-#
-# The time massaging regexes start with ^[^<]* because that ensures that they
-# only operate before the first "<". That "<" will be the beginning of the
-# author name, ensuring that we don't destroy anything in the commit message
-# that looks like time.
-#
-# The log format uses } characters between each field, and `column` is later
-# used to split on them. A } in the commit subject or any other field will
-# break this.
-
-HASH="%C(yellow)%h%Creset"
-RELATIVE_TIME="%Cgreen(%ar)%Creset"
-AUTHOR="%C(bold blue)<%an>%Creset"
-REFS="%C(bold red)%d%Creset"
-SUBJECT="%s"
-
-FORMAT="$HASH}$RELATIVE_TIME}$AUTHOR}$REFS $SUBJECT"
-
-ANSI_BLACK='\033[30m'
-ANSI_BLACK_BOLD='\033[0;30;1m'
-ANSI_RED='\033[31m'
-ANSI_RED_BOLD='\033[0;31;1m'
-ANSI_GREEN='\033[32m'
-ANSI_GREEN_BOLD='\033[0;32;1m'
-ANSI_YELLOW='\033[33m'
-ANSI_YELLOW_BOLD='\033[0;33;1m'
-ANSI_BLUE='\033[34m'
-ANSI_BLUE_BOLD='\033[0;34;1m'
-ANSI_MAGENTA='\033[35m'
-ANSI_MAGENTA_BOLD='\033[0;35;1m'
-ANSI_CYAN='\033[36m'
-ANSI_CYAN_BOLD='\033[0;36;1m'
-ANSI_WHITE='\033[37m'
-ANSI_WHITE_BOLD='\033[0;37;1m'
-ANSI_RESET='\033[0m'
-
-git_show_head() {
+show_git_head() {
     pretty_git_log -1
     git show -p --pretty="tformat:"
 }
 
-git_log_pretty() {
-    git log --graph --pretty="tformat:${FORMAT}" $* |
-        # Replace (2 years ago) with (2 years)
-        sed -Ee 's/(^[^<]*) ago\)/\1)/' |
-        # Replace (2 years, 5 months) with (2 years)
-        sed -Ee 's/(^[^<]*), [[:digit:]]+ .*months?\)/\1)/' |
-        # Line columns up based on } delimiter
-        column -s '}' -t |
-        # Color merge commits specially
-        sed -Ee "s/(Merge (branch|remote-tracking branch|pull request) .*$)/$(printf $ANSI_RED)\1$(printf $ANSI_RESET)/" |
-        # Page only if we're asked to.
-        if [ -n "$GIT_NO_PAGER" ]; then
-            cat
-        else
-            # Page only if needed.
-            less --quit-if-one-screen --no-init --RAW-CONTROL-CHARS --chop-long-lines
-        fi
+# The time massaging regexes start with ^[^<]* because that ensures that they
+# only operate before the first "<". That "<" will be the beginning of the
+# author name, ensuring that we don't destroy anything in the commit message
+# that looks like time.
+reformat_timestamp() {
+    # Replace (2 years ago) with (2 years)
+    sed -Ee 's/(^[^<]*) ago\)/\1)/' |
+    # Replace (2 years, 5 months) with (2 years)
+    sed -Ee 's/(^[^<]*), [[:digit:]]+ .*months?\)/\1)/'
+}
+
+highlight_merge_commits() {
+    local COLOR_RED="$(tput setaf 196)"
+    local COLOR_RESET="$(tput sgr0)"
+    sed -Ee "s/(Merge (branch|remote-tracking branch|pull request) .*$)/$(printf ${COLOR_RED})\1$(printf ${COLOR_RESET})/"
+}
+
+git_log() {
+    local HASH="%C(yellow)%h%Creset"
+    local RELATIVE_TIME="%C(green)(%ar)%Creset"
+    local AUTHOR="%C(bold magenta)<%an>%Creset"
+    local REFS="%C(bold red)%d%Creset"
+    local SUBJECT="%s"
+
+    local FORMAT="$HASH}$RELATIVE_TIME}$AUTHOR}$REFS $SUBJECT"
+    git log --graph --pretty="tformat:${FORMAT}" $*
+}
+
+# Line columns up based on } delimiter. A } in the commit message or
+# any other field will break this.
+align_columns() {
+    column -s '}' -t
+}
+
+# Page only if asked to.
+page_or_not() {
+    if [ -n "$GIT_NO_PAGER" ]; then
+        cat
+    else
+        less --quit-if-one-screen --no-init --RAW-CONTROL-CHARS --chop-long-lines
+    fi
+}
+
+pretty_git_log() {
+    git_log $* |
+    reformat_timestamp |
+    align_columns |
+    highlight_merge_commits |
+    page_or_not
 }
