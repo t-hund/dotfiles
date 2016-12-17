@@ -21,6 +21,9 @@ alias j="z"
 alias r="R --no-save --quiet"
 alias tree="tree | less --quit-if-one-screen --no-init --RAW-CONTROL-CHARS --chop-long-lines"
 
+# Typos
+alias celar="clear"
+alias pyhton="python"
 
 # Load alias modules
 source $DOTFILES/bash/list_files_and_directories.bash
