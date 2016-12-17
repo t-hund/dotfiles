@@ -18,10 +18,9 @@ alias e="$EDITOR"
 alias v="view"
 alias g="git"
 alias j="z"
-
+alias r="R --no-save --quiet"
 alias tree="tree | less --quit-if-one-screen --no-init --RAW-CONTROL-CHARS --chop-long-lines"
 
-alias r="R --no-save --quiet"
 
 # Load alias modules
 source $DOTFILES/bash/list_files_and_directories.bash
