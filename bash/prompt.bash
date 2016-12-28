@@ -103,4 +103,7 @@ PS1+="\n\[${PROMPT_STYLE_BOLD}\]"          # newline
 PS1+="\[${PROMPT_STYLE_SYMBOL}\]$ "        # prompt symbol
 PS1+="\[${PROMPT_STYLE_RESET}\]"           # reset colors
 
+PS2="\[$PROMPT_STYLE_SYMBOL\]> \[$PROMPT_STYLE_RESET\]"
+
 export PS1
+export PS2
