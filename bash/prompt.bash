@@ -33,7 +33,8 @@ PS1+="\[${PROMPT_STYLE_USER}\]\u"          # username
 PS1+="\[${PROMPT_STYLE_SEPERATOR}\] at "   # at
 PS1+="\[${PROMPT_STYLE_HOST}\]\h"          # host
 PS1+="\[${PROMPT_STYLE_SEPERATOR}\] in "   # in
-PS1+="\[${PROMPT_STYLE_DIRECTORY}\]\w\n"   # working directory
+PS1+="\[${PROMPT_STYLE_DIRECTORY}\]\w"     # working directory
+PS1+="\n\[${PROMPT_STYLE_BOLD}\]"          # newline
 PS1+="\[${PROMPT_STYLE_SYMBOL}\]$ "        # prompt symbol
 PS1+="\[${PROMPT_STYLE_RESET}\]"           # reset colors
 
