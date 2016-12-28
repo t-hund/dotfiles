@@ -17,6 +17,11 @@ PROMPT_STYLE_DIRECTORY="$(tput setaf 190)"
 PROMPT_STYLE_SEPERATOR="$(tput setaf 240)"
 PROMPT_STYLE_SYMBOL="$(tput setaf 240)"
 
+# Highlight username when logged in as root.
+if [[ "${USER}" == "root" ]]; then
+    PROMPT_STYLE_USER="$(tput setaf 196)"
+fi
+
 # Display current working directory in terminal title
 TERMINAL_TITLE="\w"
 PS1="\[\033]0;${TERMINAL_TITLE}\007\]"
