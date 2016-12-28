@@ -17,10 +17,20 @@ PROMPT_STYLE_DIRECTORY="$(tput setaf 190)"
 PROMPT_STYLE_SEPERATOR="$(tput setaf 240)"
 PROMPT_STYLE_SYMBOL="$(tput setaf 240)"
 
+PROMPT_STYLE_VIM="$(tput setaf 38)"
+
 # Highlight username when logged in as root.
 if [[ "${USER}" == "root" ]]; then
     PROMPT_STYLE_USER="$(tput setaf 196)"
 fi
+
+# Please tell me when shell is running from vim
+prompt_vim() {
+    env | grep VIMRUNTIME > /dev/null
+    if [ $? -eq 0 ]; then
+        echo -e "${PROMPT_STYLE_SEPERATOR} from ${PROMPT_STYLE_VIM}vim"
+    fi
+}
 
 # Display current working directory in terminal title
 TERMINAL_TITLE="\w"
@@ -34,6 +44,7 @@ PS1+="\[${PROMPT_STYLE_SEPERATOR}\] at "   # at
 PS1+="\[${PROMPT_STYLE_HOST}\]\h"          # host
 PS1+="\[${PROMPT_STYLE_SEPERATOR}\] in "   # in
 PS1+="\[${PROMPT_STYLE_DIRECTORY}\]\w"     # working directory
+PS1+="\$(prompt_vim)"                      # from vim
 PS1+="\n\[${PROMPT_STYLE_BOLD}\]"          # newline
 PS1+="\[${PROMPT_STYLE_SYMBOL}\]$ "        # prompt symbol
 PS1+="\[${PROMPT_STYLE_RESET}\]"           # reset colors
