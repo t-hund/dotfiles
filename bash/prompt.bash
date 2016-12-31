@@ -16,6 +16,7 @@ PROMPT_STYLE_HOST="$(tput setaf 202)"
 PROMPT_STYLE_DIRECTORY="$(tput setaf 190)"
 PROMPT_STYLE_SEPERATOR="$(tput setaf 240)"
 PROMPT_STYLE_SYMBOL="$(tput setaf 240)"
+PROMPT_STYLE_COMMAND="$(tput setaf 255)"
 
 PROMPT_STYLE_GIT_BRANCH="$(tput setaf 98)"
 PROMPT_STYLE_GIT_STATUS="$(tput setaf 169)"
@@ -101,9 +102,9 @@ PS1+="\$(prompt_git)"                      # git info
 PS1+="\$(prompt_vim)"                      # from vim
 PS1+="\n\[${PROMPT_STYLE_BOLD}\]"          # newline
 PS1+="\[${PROMPT_STYLE_SYMBOL}\]∵ "        # prompt symbol
-PS1+="\[${PROMPT_STYLE_RESET}\]"           # reset colors
+PS1+="\[${PROMPT_STYLE_COMMAND}\]"         # highlight command (color bleeding is a feature, not a bug!)
 
-PS2="\[$PROMPT_STYLE_SYMBOL\]│ \[$PROMPT_STYLE_RESET\]"
+PS2="\[$PROMPT_STYLE_SYMBOL\]│ \[$PROMPT_STYLE_COMMAND\]";
 
 export PS1
 export PS2
