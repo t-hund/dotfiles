@@ -21,3 +21,6 @@ alias la="ls -lahF ${colorflag}"
 
 # List directories in long format
 alias ld="ls -lhF ${colorflag} | grep --color=never '^d'"
+
+# List contents of directories in a tree-like format
+alias tree="tree | less --quit-if-one-screen --no-init --RAW-CONTROL-CHARS --chop-long-lines"

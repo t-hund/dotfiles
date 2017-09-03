@@ -20,7 +20,6 @@ alias g="git"
 alias j="z"
 alias r="R --no-save --quiet"
 alias py=python
-alias tree="tree | less --quit-if-one-screen --no-init --RAW-CONTROL-CHARS --chop-long-lines"
 
 # Typos
 alias celar="clear"
