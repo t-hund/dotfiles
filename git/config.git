@@ -44,4 +44,4 @@
     la = !git l --all
 
     # Leaderboard.
-    leaderboard = shortlog --numbered --summary
+    leaderboard = shortlog --all --numbered --summary
