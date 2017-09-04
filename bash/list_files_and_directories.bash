@@ -6,7 +6,7 @@
 if ls --color > /dev/null 2>&1; then
 	colorflag="--color" # GNU ls
 else
-	colorflag="-G" # macOS ls
+	colorflag="-G" # OSX ls
 fi
 
 # Always use color output for ls
@@ -23,4 +23,6 @@ alias la="ls -lahF ${colorflag}"
 alias ld="ls -lhF ${colorflag} | grep --color=never '^d'"
 
 # List contents of directories in a tree-like format
-alias tree="tree | less --quit-if-one-screen --no-init --RAW-CONTROL-CHARS --chop-long-lines"
+function tree() {
+    command tree -C "$@" | less --quit-if-one-screen --no-init --RAW-CONTROL-CHARS --chop-long-lines
+}
