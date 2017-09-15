@@ -19,3 +19,6 @@ export MANPAGER="/bin/sh -c \"col -b | vim -c 'set ft=man ts=8 nomod nolist nonu
 # Use US English and UTF-8
 export LANG="en_US.UTF-8";
 export LC_ALL="en_US.UTF-8";
+
+# Always enable colored `grep` output
+export GREP_OPTIONS="--color=auto";
