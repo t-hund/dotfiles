@@ -2,6 +2,10 @@
 # Exports
 #=======================================================================
 
+# Remember more history (allow 32³ entries)
+export HISTSIZE=32768;
+export HISTFILESIZE=$HISTSIZE;
+
 # Make vim the default editor
 export EDITOR="vim";
 
