@@ -15,3 +15,7 @@ export EDITOR="vim";
 
 # Don’t clear the screen after quitting a manual page
 export MANPAGER="/bin/sh -c \"col -b | vim -c 'set ft=man ts=8 nomod nolist nonu noma' -\""
+
+# Use US English and UTF-8
+export LANG="en_US.UTF-8";
+export LC_ALL="en_US.UTF-8";
