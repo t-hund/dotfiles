@@ -4,9 +4,9 @@
 
 # Detect which ls flavor is in use
 if ls --color > /dev/null 2>&1; then
-	colorflag="--color" # GNU ls
+    colorflag="--color=auto" # GNU ls
 else
-	colorflag="-G" # OSX ls
+    colorflag="-G" # OSX ls
 fi
 
 # Always use color output for ls
