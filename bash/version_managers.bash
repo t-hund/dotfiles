@@ -13,5 +13,5 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 # Load nvm
 # WHY DOES THIS LOAD SO SLOOOOOOWWWLYYY?!
-export NVM_DIR="/home/tova/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"
+#export NVM_DIR="/home/tova/.nvm"
+#[ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"
