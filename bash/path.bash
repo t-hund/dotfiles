@@ -2,7 +2,7 @@
 # Path
 #=======================================================================
 
-export DOTFILES="$HOME/dotfiles"
+# NOTE: DOTFILES is set in init.bash
 export GOPATH="$HOME/Dropbox/dev/go"
 export GTEST_HOME="$HOME/Dropbox/programming/libs/googletest/googletest"
 

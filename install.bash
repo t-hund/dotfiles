@@ -2,7 +2,7 @@
 # Install script
 #=======================================================================
 
-DOTFILES=$HOME/dotfiles
+DOTFILES=$HOME/Dropbox/dotfiles
 
 # Git
 ln -sf $DOTFILES/git/config.git $HOME/.gitconfig
