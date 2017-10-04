@@ -5,6 +5,16 @@
     editor = vim
 [color]
     ui = true
+[color "diff"]
+    meta = white bold
+    plain = black bold
+    frag = cyan
+    old = red bold
+    new = green
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = cyan
 [merge]
     tool = vimdiff
 [pull]
