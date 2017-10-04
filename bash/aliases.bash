@@ -25,6 +25,11 @@ alias py=python
 alias celar="clear"
 alias pyhton="python"
 
+# Grep and friends
+alias grep="grep --color=auto"
+alias fgrep="fgrep --color=auto"
+alias egrep="egrep --color=auto"
+
 # Load alias modules
 source $DOTFILES/bash/list_files_and_directories.bash
 source $DOTFILES/bash/navigation.bash
