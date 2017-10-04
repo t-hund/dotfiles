@@ -13,3 +13,6 @@ ln -sf $DOTFILES/bash/init.bash $HOME/.bash_profile
 
 # EditorConfig
 ln -sf $DOTFILES/.editorconfig $HOME/.editorconfig
+
+# Tmux
+ln -sf $DOTFILES/.tmux.conf $HOME/.tmux.conf
