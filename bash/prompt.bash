@@ -90,9 +90,6 @@ prompt_vim() {
     return $EXIT_STATUS
 }
 
-# Display current working directory in terminal title
-TERMINAL_TITLE="\w"
-PS1="\[\033]0;${TERMINAL_TITLE}\007\]"
 
 # Display the exit status of the most recently executed foreground pipeline
 prompt_exit_status() {
@@ -102,6 +99,12 @@ prompt_exit_status() {
 
 }
 
+# Restore colors before command output
+PS0="${PROMPT_STYLE_RESET}\n"
+
+# Display current working directory in terminal title
+TERMINAL_TITLE="\w"
+PS1="\[\033]0;${TERMINAL_TITLE}\007\]"
 PS1+="\[${PROMPT_STYLE_RESET}\]"           # reset colors
 PS1+="\[${PROMPT_STYLE_BOLD}\]\n"          # newline
 PS1+="\[${PROMPT_STYLE_USER}\]\u"          # username
@@ -114,9 +117,10 @@ PS1+="\$(prompt_vim)"                      # from vim
 PS1+="\$(prompt_exit_status)"              # Display exit status if non-zero
 PS1+="\n\[${PROMPT_STYLE_BOLD}\]"          # newline
 PS1+="\[${PROMPT_STYLE_SYMBOL}\]∵ "        # prompt symbol
-PS1+="\[${PROMPT_STYLE_COMMAND}\]"         # highlight command (color bleeding is a feature, not a bug!)
+PS1+="\[${PROMPT_STYLE_COMMAND}\]"         # highlight command
 
 PS2="\[$PROMPT_STYLE_SYMBOL\]│ \[$PROMPT_STYLE_COMMAND\]";
 
+export PS0
 export PS1
 export PS2
