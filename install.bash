@@ -16,3 +16,6 @@ ln -sf $DOTFILES/.editorconfig $HOME/.editorconfig
 
 # Tmux
 ln -sf $DOTFILES/.tmux.conf $HOME/.tmux.conf
+
+# Ag
+ln -sf $DOTFILES/.agignore $HOME/.agignore
