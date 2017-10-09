@@ -19,3 +19,6 @@ ln -sf $DOTFILES/.tmux.conf $HOME/.tmux.conf
 
 # Ag
 ln -sf $DOTFILES/.agignore $HOME/.agignore
+
+# Zathura
+ln -sf $DOTFILES/zathurarc $HOME/.config/zathura/zathurarc
