@@ -10,6 +10,7 @@
 
 fancy_git_head() {
     fancy_git_log -1
+    echo
     git show -p --pretty="tformat:"
 }
 
