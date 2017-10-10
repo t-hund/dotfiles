@@ -11,6 +11,9 @@ alias reload="exec $SHELL -l"
 # cat with beautiful colors.
 alias c='pygmentize -O style=native -f console256 -g'
 
+# Open pfds with zathura
+alias openpdf="zathura"
+
 # Abbreviations and shortcuts
 alias q="exit"
 alias Q="exit"
@@ -33,6 +36,5 @@ alias egrep="egrep --color=auto"
 # Load alias modules
 source $DOTFILES/bash/list_files_and_directories.bash
 source $DOTFILES/bash/navigation.bash
-source $DOTFILES/bash/openpdf.bash
 source $DOTFILES/bash/create_directories.bash
 source $DOTFILES/bash/time.bash
