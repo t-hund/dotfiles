@@ -48,10 +48,10 @@
     # la = all commits, all reachable refs
     head = !git r -1
     h = !git head
-    hp = "!. $DOTFILES/git/log.bash && show_git_head"
+    hp = "!. $DOTFILES/git/log.bash && fancy_git_head"
     r = !GIT_NO_PAGER=1 git l -30
     ra = !git r --all
-    l = "!. $DOTFILES/git/log.bash && pretty_git_log"
+    l = "!. $DOTFILES/git/log.bash && fancy_git_log"
     la = !git l --all
 
     # Leaderboard.

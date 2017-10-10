@@ -8,8 +8,8 @@
 # * ca5d121  (2 months)  <Tommy Vagbratt>   This is where it all begins...
 #
 
-show_git_head() {
-    pretty_git_log -1
+fancy_git_head() {
+    fancy_git_log -1
     git show -p --pretty="tformat:"
 }
 
@@ -56,7 +56,7 @@ page_or_not() {
     fi
 }
 
-pretty_git_log() {
+fancy_git_log() {
     git_log $* |
     reformat_timestamp |
     align_columns |
