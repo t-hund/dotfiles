@@ -1,6 +1,12 @@
 #!/bin/bash
-# Sweet git log format found in gary bernhardt's dotfiles
+
+# This super fancy git log was copied from Gary Bernhardt's dotfiles and
+# then refactored to make it easier to conceive.
+#
+# Example log output:
+#
 # * ca5d121  (2 months)  <Tommy Vagbratt>   This is where it all begins...
+#
 
 show_git_head() {
     pretty_git_log -1
