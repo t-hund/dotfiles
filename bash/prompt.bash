@@ -11,17 +11,17 @@ fi
 # Define prompt colors
 PROMPT_STYLE_RESET="$(tput sgr0)"
 PROMPT_STYLE_BOLD="$(tput bold)"
-PROMPT_STYLE_USER="$(tput setaf 132)"
-PROMPT_STYLE_HOST="$(tput setaf 202)"
-PROMPT_STYLE_DIRECTORY="$(tput setaf 190)"
+PROMPT_STYLE_USER="$(tput setaf 66)"
+PROMPT_STYLE_HOST="$(tput setaf 131)"
+PROMPT_STYLE_DIRECTORY="$(tput setaf 178)"
 PROMPT_STYLE_SEPERATOR="$(tput setaf 240)"
 PROMPT_STYLE_SYMBOL="$(tput setaf 240)"
 PROMPT_STYLE_COMMAND="$(tput setaf 255)"
 
-PROMPT_STYLE_GIT_BRANCH="$(tput setaf 98)"
-PROMPT_STYLE_GIT_STATUS="$(tput setaf 169)"
+PROMPT_STYLE_GIT_BRANCH="$(tput setaf 66)"
+PROMPT_STYLE_GIT_STATUS="$(tput setaf 166)"
 
-PROMPT_STYLE_VIM="$(tput setaf 38)"
+PROMPT_STYLE_VIM="$(tput setaf 172)"
 
 PROMPT_STYLE_EXIT_STATUS="$(tput setaf 196)"
 
