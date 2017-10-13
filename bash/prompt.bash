@@ -20,7 +20,11 @@ PROMPT_STYLE_SYMBOL="$(tput setaf 240)"
 PROMPT_STYLE_COMMAND="$(tput setaf 255)"
 
 PROMPT_STYLE_GIT_BRANCH="$(tput setaf 66)"
-PROMPT_STYLE_GIT_STATUS="$(tput setaf 166)"
+PROMPT_STYLE_GIT_STATUS="$(tput setaf 242)"
+PROMPT_STYLE_GIT_STATUS_STAGED="$(tput setaf 64)"
+PROMPT_STYLE_GIT_STATUS_MODIFIED="$(tput setaf 196)"
+PROMPT_STYLE_GIT_STATUS_UNTRACKED="$(tput setaf 168)"
+PROMPT_STYLE_GIT_STATUS_STASH="$(tput setaf 172)"
 
 PROMPT_STYLE_VIM="$(tput setaf 172)"
 
@@ -48,22 +52,22 @@ prompt_git() {
 
             # Check for uncommitted changes in the index.
             if ! $(git diff --quiet --ignore-submodules --cached); then
-                s+="+"
+                s+="${PROMPT_STYLE_GIT_STATUS_STAGED}+${PROMPT_STYLE_GIT_STATUS}"
             fi
 
             # Check for unstaged changes.
             if ! $(git diff-files --quiet --ignore-submodules --); then
-                s+="!"
+                s+="${PROMPT_STYLE_GIT_STATUS_MODIFIED}!${PROMPT_STYLE_GIT_STATUS}"
             fi
 
             # Check for untracked files.
             if [ -n "$(git ls-files --others --exclude-standard)" ]; then
-                s+="?"
+                s+="${PROMPT_STYLE_GIT_STATUS_UNTRACKED}?${PROMPT_STYLE_GIT_STATUS}"
             fi
 
             # Check for stashed files.
             if $(git rev-parse --verify refs/stash &>/dev/null); then
-                s+="$"
+                s+="${PROMPT_STYLE_GIT_STATUS_STASH}\$${PROMPT_STYLE_GIT_STATUS}"
             fi
         fi
 
