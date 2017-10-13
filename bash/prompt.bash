@@ -19,6 +19,7 @@ PROMPT_STYLE_SEPERATOR="$(tput setaf 240)"
 PROMPT_STYLE_SYMBOL="$(tput setaf 240)"
 PROMPT_STYLE_COMMAND="$(tput setaf 255)"
 
+# Git
 PROMPT_STYLE_GIT_BRANCH="$(tput setaf 66)"
 PROMPT_STYLE_GIT_STATUS="$(tput setaf 242)"
 PROMPT_STYLE_GIT_STATUS_STAGED="$(tput setaf 64)"
@@ -26,8 +27,10 @@ PROMPT_STYLE_GIT_STATUS_MODIFIED="$(tput setaf 196)"
 PROMPT_STYLE_GIT_STATUS_UNTRACKED="$(tput setaf 168)"
 PROMPT_STYLE_GIT_STATUS_STASH="$(tput setaf 172)"
 
+# Vim
 PROMPT_STYLE_VIM="$(tput setaf 172)"
 
+# Exit status
 PROMPT_STYLE_EXIT_STATUS="$(tput setaf 196)"
 
 # Highlight username when logged in as root.
