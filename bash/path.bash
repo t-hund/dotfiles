@@ -2,12 +2,18 @@
 # Path
 #=======================================================================
 
-# NOTE: DOTFILES is set in init.bash
-export GOPATH="$HOME/Dropbox/dev/go"
+# local bin
+export PATH="$HOME/bin:$PATH";
+
+# Google Test
 export GTEST_HOME="$HOME/Dropbox/programming/libs/googletest/googletest"
 
+# Go
+export GOPATH="$HOME/Dropbox/code/go"
 export PATH="$GOPATH/bin:$PATH";
-export PATH="$HOME/bin:$PATH";
-export PATH="$HOME/uu/compiler_project/uc/bin/:$PATH";
-export PATH="$HOME/projects/nice/prototype:$PATH";
+
+# Haskell Stack
+export PATH="$HOME.local/bin:$PATH";
+
+# Encore
 export PATH="$HOME/Dropbox/code/encore/encore/release:$PATH";
