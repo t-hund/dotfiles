@@ -12,6 +12,7 @@ fi
 PROMPT_STYLE_RESET="$(tput sgr0)"
 PROMPT_STYLE_BOLD="$(tput bold)"
 PROMPT_STYLE_USER="$(tput setaf 66)"
+PROMPT_STYLE_ROOT="$(tput setaf 196)"
 PROMPT_STYLE_HOST="$(tput setaf 131)"
 PROMPT_STYLE_DIRECTORY="$(tput setaf 178)"
 PROMPT_STYLE_SEPERATOR="$(tput setaf 240)"
@@ -27,7 +28,7 @@ PROMPT_STYLE_EXIT_STATUS="$(tput setaf 196)"
 
 # Highlight username when logged in as root.
 if [[ "${USER}" == "root" ]]; then
-    PROMPT_STYLE_USER="$(tput setaf 196)"
+    PROMPT_STYLE_USER="${PROMPT_STYLE_ROOT}"
 fi
 
 # Display information about the current git repository
