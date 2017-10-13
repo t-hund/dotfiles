@@ -102,9 +102,7 @@ prompt_vim() {
 # Display the exit status of the most recently executed foreground pipeline
 prompt_exit_status() {
     EXIT_STATUS=$?
-    NEWLINE="\n"
     [ $EXIT_STATUS -ne 0 ] && echo -e "${PROMPT_STYLE_SEPERATOR} exit status ${PROMPT_STYLE_EXIT_STATUS}${EXIT_STATUS}"
-
 }
 
 # Restore colors before command output
