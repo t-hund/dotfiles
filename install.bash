@@ -17,6 +17,9 @@ ln -sf $DOTFILES/.editorconfig $HOME/.editorconfig
 # Tmux
 ln -sf $DOTFILES/.tmux.conf $HOME/.tmux.conf
 
+# Screen
+ln -sf $DOTFILES/.screenrc $HOME/.screenrc
+
 # Ag
 ln -sf $DOTFILES/.agignore $HOME/.agignore
 
