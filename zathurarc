@@ -9,3 +9,6 @@ set window-height 768
 # Scroll faster
 set scroll-step 80
 
+# Fix clipboard
+set selection-clipboard clipboard
+
