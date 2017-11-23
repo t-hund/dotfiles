@@ -14,7 +14,7 @@ trim_trailing_whitespace = true
 indent_style = space
 indent_size = 4
 
-[*.{clj,elm,hs,rb,scala,sml}]
+[*.{clj,elm,hs,rb,scala,sml,html,ts}]
 indent_style = space
 indent_size = 2
 
