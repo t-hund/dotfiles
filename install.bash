@@ -25,3 +25,6 @@ ln -sf $DOTFILES/.agignore $HOME/.agignore
 
 # Zathura
 ln -sf $DOTFILES/zathurarc $HOME/.config/zathura/zathurarc
+
+# xmodmap
+ln -sf $DOTFILES/.xmodmap $HOME/.xmodmap
