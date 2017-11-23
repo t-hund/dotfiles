@@ -20,3 +20,6 @@ export PATH="$HOME/.cabal/bin:$PATH";
 
 # Encore
 export PATH="$HOME/Dropbox/code/encore/encore/release:$PATH";
+
+# Rust
+export PATH="$HOME/.cargo/bin:$PATH"
