@@ -16,3 +16,6 @@ source "$DOTFILES/bash/version_managers.bash"
 
 # initialize z   (https://github.com/rupa/z)
 source "$DOTFILES/bin/z.sh"
+
+# Disable <c-s> permanently in terminal
+stty -ixon
