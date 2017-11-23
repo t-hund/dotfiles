@@ -13,7 +13,7 @@ export GOPATH="$HOME/Dropbox/code/go"
 export PATH="$GOPATH/bin:$PATH";
 
 # Haskell Stack
-export PATH="$HOME.local/bin:$PATH";
+export PATH="$HOME/.local/bin:$PATH";
 
 # Encore
 export PATH="$HOME/Dropbox/code/encore/encore/release:$PATH";
