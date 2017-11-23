@@ -28,3 +28,6 @@ ln -sf $DOTFILES/zathurarc $HOME/.config/zathura/zathurarc
 
 # xmodmap
 ln -sf $DOTFILES/.xmodmap $HOME/.xmodmap
+
+# ghci
+ln -sf $DOTFILES/.ghci $HOME/.ghci
