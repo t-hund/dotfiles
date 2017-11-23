@@ -31,3 +31,6 @@ indent_style = tab
 
 [*.{md,markdown}]
 trim_trailing_whitespace = true
+
+[*.snippet]
+indent_style = tab
