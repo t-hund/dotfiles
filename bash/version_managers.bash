@@ -15,6 +15,7 @@ if [[ -s "/usr/local/share/chruby/chruby.sh" ]]; then
 fi
 
 # Load nvm
-# WHY DOES THIS LOAD SO SLOOOOOOWWWLYYY?!
-#export NVM_DIR="/home/tova/.nvm"
-#[ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"
+# WHY SO SLOOOOOOWWWLYYY?!
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
