@@ -23,6 +23,7 @@ alias g="git"
 alias j="z"
 alias r="R --no-save --quiet"
 alias py="python"
+alias r="ranger"
 
 # Typos
 alias celar="clear"

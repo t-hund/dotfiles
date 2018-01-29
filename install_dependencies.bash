@@ -42,3 +42,4 @@ sudo apt install tmux --yes
 sudo apt install tree --yes
 sudo apt install htop --yes
 sudo apt install curl --yes
+sudo apt install ranger --yes
