@@ -22,7 +22,7 @@ alias v="view"
 alias g="git"
 alias j="z"
 alias r="R --no-save --quiet"
-alias py=python
+alias py="python"
 
 # Typos
 alias celar="clear"
