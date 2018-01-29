@@ -5,6 +5,9 @@
 # Local bin
 export PATH="$HOME/bin:$PATH";
 
+# Dotfiles bin
+export PATH="$DOTFILES/bin:$PATH";
+
 # Google Test
 export GTEST_HOME="$HOME/Dropbox/programming/libs/googletest/googletest"
 
