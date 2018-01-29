@@ -6,7 +6,7 @@
 sudo apt install git --yes
 
 # Vim
-sudo apt install vim-gtk3
+sudo apt install vim-gtk3 --yes
 
 # Latex and pdfs
 sudo apt install texlive-full --yes
