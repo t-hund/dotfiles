@@ -24,6 +24,7 @@ alias j="z"
 alias r="R --no-save --quiet"
 alias py="python"
 alias r="ranger"
+alias cal="calcurse"
 
 # Typos
 alias celar="clear"
