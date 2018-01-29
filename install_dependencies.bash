@@ -2,6 +2,9 @@
 # Install dependencies
 #=======================================================================
 
+# Git
+sudo apt install git --yes
+
 # Vim
 sudo apt install vim-gtk3
 
