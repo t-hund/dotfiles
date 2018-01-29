@@ -2,7 +2,7 @@
 # Path
 #=======================================================================
 
-# local bin
+# Local bin
 export PATH="$HOME/bin:$PATH";
 
 # Google Test
