@@ -48,3 +48,7 @@ sudo apt install curl --yes
 sudo apt install feh --yes
 sudo apt install ranger --yes
 sudo apt install calcurse --yes
+
+# Debian
+sudo apt install xbacklight --yes
+sudo apt install xinput --yes
