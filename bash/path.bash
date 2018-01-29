@@ -22,7 +22,7 @@ export PATH="$HOME/.local/bin:$PATH";
 export PATH="$HOME/.cabal/bin:$PATH";
 
 # Encore
-export PATH="$HOME/Dropbox/code/encore/encore/release:$PATH";
+export PATH="$HOME/Dropbox/work/uu/thesis/encore/release:$PATH"
 
 # Rust
 export PATH="$HOME/.cargo/bin:$PATH"
