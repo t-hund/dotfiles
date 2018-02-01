@@ -2,7 +2,7 @@
 # Bash init
 #=======================================================================
 
-export DOTFILES="$HOME/Dropbox/dotfiles"
+export DOTFILES="/home/tova/Dropbox/dotfiles"
 
 source "$DOTFILES/bash/path.bash"
 source "$DOTFILES/bash/functions.bash"
