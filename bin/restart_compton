@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+set -e
+
+pkill compton
+compton --backend glx \
+        --fading \
+        --fade-in-step=0.028 \
+        --fade-out-step=0.03 \
+        --fade-delta=5 &
+
