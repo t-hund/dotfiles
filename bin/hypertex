@@ -1,0 +1,42 @@
+#!/usr/bin/env ruby
+#
+# HyperTex - Building Latex has never been easier
+# Made by Tommy Vågbratt <tommy@vagbratt.se>
+
+def main
+    if ARGV.empty?
+        puts "Usage: hypertex [ tex_files_with_out_extensions.. ]"
+        exit
+    end
+
+    ARGV.each do |file|
+        if File.exist? "#{file}.tex"
+            build_latex file
+        else
+            puts "#{file} does not exist"
+        end
+    end
+end
+
+
+def build_latex file
+    latex = "pdflatex -interaction nonstopmode #{file}.tex"
+    references = "bibtex #{file}.aux"
+
+    [ [ latex, "Compiling latex :D" ],
+      [ references, "Wait, almost forget the references!" ],
+      [ latex, "Ok, lets compile again.."],
+      [ latex, "And again.."] ].each do |(command, message)|
+        puts message
+        output = `#{command}`
+        unless $? == 0
+            puts output
+            exit
+        end
+    end
+
+    puts "\n  Yay, it worked!\n"
+end
+
+
+main
