@@ -8,7 +8,11 @@ export HISTFILESIZE=$HISTSIZE;
 export HISTCONTROL=ignoredups;
 
 # Make some commands not show up in history
-export HISTIGNORE="ls:cd:cd -:cd..:..:pwd:q:exit:date:* --help";
+HISTIGNORE="* --help:clear:date"
+HISTIGNORE+=":..:cd:cd -:cd..:cd .."
+HISTIGNORE+=":r:l:la:ls:tree:pwd"
+HISTIGNORE+=":exit:q"
+export HISTIGNORE
 
 # Make vim the default editor
 export EDITOR="vim";
