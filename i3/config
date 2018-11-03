@@ -1,0 +1,258 @@
+#=======================================================================
+# i3 config file (v4)
+#=======================================================================
+
+# Preamble {{{
+
+# Setup modifier
+set $mod Mod1
+set $left h
+set $down j
+set $up k
+set $right l
+
+# Fonts
+set $font_default pango:Meslo Mono 0
+set $font_status_bar pango:Meslo Mono 10, Font Awesome 8
+set $font_rofi "Meslo Mono 16"
+font $font_default
+
+# Use mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# Disable focus follows mouse
+focus_follows_mouse no
+
+#}}}
+
+# Launcher: Rofi {{{
+
+# Rofi config
+set $rofi_offset -128
+set $rofi_num_lines 10
+
+# Application launcher
+bindsym $mod+space exec rofi -show drun \
+                             -lines $rofi_num_lines \
+                             -bw 0 \
+                             -scroll-method 1 \
+                             -font $font_rofi \
+                             -hide-scrollbar \
+                             -location 0 \
+                             -yoffset $rofi_offset
+
+
+# Window switching
+bindsym $mod+Control+space exec rofi -show window \
+                                     -lines $rofi_num_lines \
+                                     -bw 0 \
+                                     -scroll-method 1 \
+                                     -font $font_rofi \
+                                     -hide-scrollbar \
+                                     -location 0 \
+                                     -yoffset $rofi_offset
+
+# }}}
+
+# Navigation {{{
+
+# Change focus
+bindsym $mod+$left  focus left
+bindsym $mod+$down  focus down
+bindsym $mod+$up    focus up
+bindsym $mod+$right focus right
+
+# Move focused window
+bindsym $mod+Shift+$left  move left
+bindsym $mod+Shift+$down  move down
+bindsym $mod+Shift+$up    move up
+bindsym $mod+Shift+$right move right
+
+# Move workspaces
+bindsym $mod+Control+$left  move workspace to output left
+bindsym $mod+Control+$down  move workspace to output down
+bindsym $mod+Control+$up    move workspace to output up
+bindsym $mod+Control+$right move workspace to output right
+
+# }}}
+
+# Keybindings {{{
+
+# Caps Lock as Ctrl
+exec_always setxkbmap -option ctrl:nocaps
+
+# Natural Scrolling
+exec_always xinput --set-prop "CyPS/2 Cypress Trackpad" "libinput Natural Scrolling Enabled" 1
+
+# Start a terminal
+bindsym $mod+Return exec i3-sensible-terminal
+
+# Kill focused window
+bindsym $mod+q kill
+
+# Enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen
+
+# Toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# Toggle split orientation
+bindsym $mod+s split toggle
+
+# Focus the parent container
+bindsym $mod+p focus parent
+
+# Focus the child container
+bindsym $mod+c focus child
+
+# Kill i3
+bindsym XF86PowerOff exec "i3-msg exit"
+
+# Reload the i3 config
+bindsym $mod+Shift+c reload
+
+# Restart i3
+bindsym $mod+Shift+r restart
+
+# }}}
+
+# Workspaces {{{
+set $workspace1 "1:&#xf269;"
+set $workspace2 "2:&#xf15c;"
+set $workspace3 "3:&#xf120;"
+set $workspace4 "4:&#xf1fc;"
+set $workspace5 "5:&#xf0c2;"
+set $workspace6 "6:&#xf1b2;"
+set $workspace7 "7:&#xf111;"
+set $workspace8 "8:&#xf0c8;"
+set $workspace9 "9:&#xf073;"
+set $workspace10 "10:&#xf086;"
+
+# Switch to workspace
+bindsym $mod+1 workspace $workspace1
+bindsym $mod+2 workspace $workspace2
+bindsym $mod+3 workspace $workspace3
+bindsym $mod+4 workspace $workspace4
+bindsym $mod+5 workspace $workspace5
+bindsym $mod+6 workspace $workspace6
+bindsym $mod+7 workspace $workspace7
+bindsym $mod+8 workspace $workspace8
+bindsym $mod+9 workspace $workspace9
+bindsym $mod+0 workspace $workspace10
+
+# Move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $workspace1
+bindsym $mod+Shift+2 move container to workspace $workspace2
+bindsym $mod+Shift+3 move container to workspace $workspace3
+bindsym $mod+Shift+4 move container to workspace $workspace4
+bindsym $mod+Shift+5 move container to workspace $workspace5
+bindsym $mod+Shift+6 move container to workspace $workspace6
+bindsym $mod+Shift+7 move container to workspace $workspace7
+bindsym $mod+Shift+8 move container to workspace $workspace8
+bindsym $mod+Shift+9 move container to workspace $workspace9
+bindsym $mod+Shift+0 move container to workspace $workspace10
+
+# Setup dedicated workspaces
+assign [class="Firefox"] $workspace1
+assign [class="Slack"] $workspace10
+# }}}
+
+# Resize {{{
+mode "resize" {
+        # resize using hjkl
+        bindsym $left resize shrink width 10 px or 10 ppt
+        bindsym $down resize grow height 10 px or 10 ppt
+        bindsym $up resize shrink height 10 px or 10 ppt
+        bindsym $right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter, Escape or $mod+r
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
+
+bindsym $mod+r mode "resize"
+# }}}
+
+# Colors {{{
+
+set $background #001D22
+set $focus      #005661
+set $inactive   #458588
+set $indicator  #cc241d
+set $separator  #665c54
+set $text       #eee8d5
+set $unfocused  #333333
+set $urgent     #cc241d
+
+# }}}
+
+# Status Bar {{{
+bar {
+    strip_workspace_numbers yes
+    status_command i3blocks
+    position top
+    font $font_status_bar
+    colors {
+        #                  border      background  text
+        focused_workspace  $focus      $focus      $text
+        active_workspace   $background $background $text
+        inactive_workspace $background $background $inactive
+        urgent_workspace   $urgent     $urgent     $text
+
+        background $background
+        statusline $inactive
+        separator  $separator
+    }
+}
+# }}}
+
+# Window {{{
+
+#                       border     background text   indicator
+client.focused          $focus     $focus     $text  $indicator
+client.focused_inactive $unfocused $unfocused $text  $indicator
+client.unfocused        $unfocused $unfocused $text  $indicator
+
+new_window normal 0 px
+hide_edge_borders both
+# }}}
+
+# Media Controls {{{
+
+# Pulse Audio controls
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5% && pkill -SIGRTMIN+10 i3blocks
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -5% && pkill -SIGRTMIN+10 i3blocks
+bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle && pkill -SIGRTMIN+10 i3blocks
+
+# Media player controls
+bindsym XF86AudioPlay exec playerctl play
+bindsym XF86AudioPause exec playerctl pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
+# Brightness
+bindsym XF86MonBrightnessUp exec xbacklight -inc 30 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 30 # decrease screen brightness
+#}}}
+
+# Startup {{{
+
+# Set a pretty background image
+exec_always feh --bg-fill ~/Dropbox/media/images/wallpapers/adventure_time_where_the_wild_things_are_1920x1080.jpg
+
+# Set a decent default volume and mute sound
+exec pactl set-sink-volume 0 30% && pkill -SIGRTMIN+10 i3blocks
+exec pactl set-sink-mute 0 1 && pkill -SIGRTMIN+10 i3blocks
+
+# Get along with Gnome
+exec --no-startup-id /usr/lib/gnome-settings-daemon/gnome-settings-daemon
+
+# Compositor
+exec compton --backend glx \
+             --fading \
+             --fade-in-step=0.028 \
+             --fade-out-step=0.03 \
+             --fade-delta=5
+
+# }}}

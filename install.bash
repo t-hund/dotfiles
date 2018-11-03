@@ -34,3 +34,6 @@ ln -sf $DOTFILES/.ghci $HOME/.ghci
 
 # inputrc
 ln -sf $DOTFILES/inputrc $HOME/.inputrc
+
+# i3
+ln -sf $DOTFILES/i3/config $HOME/.config/i3/config
