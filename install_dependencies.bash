@@ -52,3 +52,5 @@ sudo apt install calcurse --yes
 # Debian
 sudo apt install xbacklight --yes
 sudo apt install xinput --yes
+
+sudo apt install compton --yes
