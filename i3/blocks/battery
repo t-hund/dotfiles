@@ -1,0 +1,67 @@
+#!/usr/bin/env ruby
+#
+# Made by Tommy Vågbratt <tommy@vagbratt.se>
+#
+# "Battery 0: Unknown, 18%, rate information unavailable"
+# "Battery 0: Discharging, 18%, 00:31:49 remaining"
+# "Battery 0: Charging, 24%, 02:17:35 until charged"
+# "Battery 0: Full, 100%"
+
+def main
+  battery_index = ENV["BLOCK_INSTANCE"] || 0
+  raw_status = `acpi -b | grep 'Battery #{battery_index}'`
+  match = /: (?<status>\w+), (?<percent>\d+)%/.match raw_status
+  exit if match.nil?
+
+  status = match[:status]
+  percent = match[:percent].to_i
+
+  text = "#{percent}%"
+
+  # Extract time if possible
+  match = /(?<time>\d\d:\d\d):/.match raw_status
+  text += " (#{match[:time]})" unless match.nil?
+
+  if status == "Discharging"
+    case
+    when percent < 20
+      # |    | Empty
+      icon = "&#xf244;"
+      color = "#FF0000"
+
+    when percent < 40
+      # |   o| Quarter
+	  icon = "&#xf243;"
+      color = "#FFAE00"
+
+    when percent < 60
+      # |  oo| Half
+	  icon = "&#xf242;"
+      color = "#FFF600"
+
+    when percent < 85
+      # | ooo| Thee-quarters
+	  icon = "&#xf241;"
+      color = "#A8FF00"
+
+    else
+      # |oooo| Full
+	  icon = "&#xf240;"
+      color = "#689D6A"
+    end
+
+  else # Charging or Unknown
+    icon = "&#xf1e6;"
+    color = "#689D6A"
+  end
+
+  # Output to i3blocks
+  puts "#{icon} #{text}"
+  puts "#{icon} #{text}"
+  puts color
+
+  # Flash red when critically low
+  exit 33 if percent < 5 and status != "Charging"
+end
+
+main

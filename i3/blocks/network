@@ -1,0 +1,20 @@
+#!/usr/bin/env ruby
+#
+# Made by Tommy Vågbratt <tommy@vagbratt.se>
+
+def main
+  icon = "&#xf1eb;"
+  interface = ENV["BLOCK_INSTANCE"] || "-wlan0"
+  interface = "wlp1s0"
+
+  exit unless File.directory? "/sys/class/net/#{interface}/wireless"
+  exit if "down" == `cat /sys/class/net/#{interface}/operstate`.chomp
+
+  quality = `grep #{interface} /proc/net/wireless | awk '{ print int($3 * 100 / 70) }'`.to_i
+  network_name = `nmcli --terse --fields active,ssid device wifi | grep "^yes" | cut --delimiter=":" --fields=2`
+
+  puts "#{icon} #{quality}% #{network_name}"
+  puts "#{icon} #{quality}%"
+end
+
+main

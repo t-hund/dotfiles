@@ -37,3 +37,6 @@ ln -sf $DOTFILES/inputrc $HOME/.inputrc
 
 # i3
 ln -sf $DOTFILES/i3/config $HOME/.config/i3/config
+
+# i3 blocks
+ln -sf $DOTFILES/i3/i3blocks.conf $HOME/.i3blocks.conf
