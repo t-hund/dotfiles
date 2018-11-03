@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+set -e
+
+screenshot="/tmp/lock_screen.png"
+
+
+# Wait for Rofi to disappear
+sleep 0.5
+
+# Capture screen
+scrot --delay 0 --quality 1 "$screenshot"
+
+# Apply blur
+convert "$screenshot" -scale 10% -scale 1000% "$screenshot"
+
+# Lock the computer
+i3lock -i "$screenshot" --color=10151f
+
+# Remove the lock screen
+rm "$screenshot"
+
