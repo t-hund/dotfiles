@@ -22,6 +22,7 @@ alias v="view"
 alias g="git"
 alias j="z"
 alias py="python"
+alias hs="ghci"
 alias r="ranger"
 alias cal="calcurse"
 
