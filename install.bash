@@ -31,3 +31,6 @@ ln -sf $DOTFILES/.xmodmap $HOME/.xmodmap
 
 # ghci
 ln -sf $DOTFILES/.ghci $HOME/.ghci
+
+# inputrc
+ln -sf $DOTFILES/inputrc $HOME/.inputrc
