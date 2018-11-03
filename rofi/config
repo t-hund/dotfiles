@@ -1,0 +1,12 @@
+! Enable the extended coloring options
+rofi.color-enabled: true
+
+
+!                  bg         border     separator
+rofi.color-window: #ff001D22, #ff001D22, #903D3C37
+
+
+!                  bg         fg         bg-alt     hl-bg      hl-fg
+rofi.color-normal: #ff001D22, #ff005661, #44003D45, #aa005661, #ffdbd6c4
+rofi.color-active: #ffd79921, #ff32302f, #ffd79921, #fffabd2f, #ff32302f
+rofi.color-urgent: #ffcc241d, #ff32302f, #ffcc241d, #fffb4934, #ff32302f

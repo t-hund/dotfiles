@@ -40,3 +40,6 @@ ln -sf $DOTFILES/i3/config $HOME/.config/i3/config
 
 # i3 blocks
 ln -sf $DOTFILES/i3/i3blocks.conf $HOME/.i3blocks.conf
+
+# rofi
+ln -sf $DOTFILES/rofi/config $HOME/.config/rofi/config
