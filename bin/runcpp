@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+#
+# runcpp makes it easy to build and run simple c++ programs.
+
+set -e
+
+temporary_executable="__runcpp_temporary_executable__"
+
+if [ $# -eq 0 ]; then
+    echo "Usage: runcpp [FILE]..."
+fi
+
+
+for file in $@; do
+    if [ -f $file ]; then
+        echo "=== Compile $file ==="
+        g++ -o "$temporary_executable" "$file"
+
+        echo "=== Run $file ==="
+        ./"$temporary_executable"
+        rm "$temporary_executable"
+    fi
+done
