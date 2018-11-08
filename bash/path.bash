@@ -26,3 +26,6 @@ export PATH="$HOME/Dropbox/work/uu/thesis/encore/release:$PATH"
 
 # Rust
 export PATH="$HOME/.cargo/bin:$PATH"
+
+# Glue
+export PATH="$HOME/Dropbox/programming/projects/glue/bin:$PATH";
