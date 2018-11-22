@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=lock
-Exec=/home/rymdskrot/Dropbox/dotfiles/bin/lock
+Exec=/home/tova/Dropbox/dotfiles/bin/lock
 Terminal=false
 Type=Application
 
