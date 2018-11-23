@@ -43,3 +43,6 @@ ln -sf $DOTFILES/i3/i3blocks.conf $HOME/.i3blocks.conf
 
 # rofi
 ln -sf $DOTFILES/rofi/config $HOME/.config/rofi/config
+
+# Xdefaults
+ln -sf $DOTFILES/.Xdefaults $HOME/.Xdefaults
