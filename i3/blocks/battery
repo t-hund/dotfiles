@@ -61,7 +61,7 @@ def main
   puts color
 
   # Flash red when critically low
-  exit 33 if percent < 5 and status != "Charging"
+  exit 33 if percent < 10 and status != "Charging"
 end
 
 main
