@@ -29,3 +29,6 @@ export PATH="$HOME/.cargo/bin:$PATH"
 
 # Glue
 export PATH="$HOME/Dropbox/programming/projects/glue/bin:$PATH";
+
+# Julia
+export PATH="$HOME/bin/julia-1.0.2/bin:$PATH";
