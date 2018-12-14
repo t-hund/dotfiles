@@ -204,6 +204,9 @@ bar {
         statusline $inactive
         separator  $separator
     }
+    # Disable scrolling
+    wheel_up_cmd nop
+    wheel_down_cmd nop
 }
 # }}}
 
