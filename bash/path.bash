@@ -32,3 +32,6 @@ export PATH="$HOME/Dropbox/programming/projects/glue/bin:$PATH";
 
 # Julia
 export PATH="$HOME/bin/julia-1.0.2/bin:$PATH";
+
+# Java 11
+export PATH="/usr/lib/jvm/jdk-11.0.2/bin:$PATH";
