@@ -14,7 +14,7 @@ fi
 for file in $@; do
     if [ -f $file ]; then
         echo "=== Compile $file ==="
-        g++ -o "$temporary_executable" "$file"
+        g++  -o "$temporary_executable" "$file" -Wredundant-decls -Wcast-align -Wmissing-include-dirs -Wswitch-enum -Wswitch-default -Wextra -Wall -Werror -Winvalid-pch -Wredundant-decls -Wformat=2 -Wmissing-format-attribute -Wformat-nonliteral
 
         echo "=== Run $file ==="
         ./"$temporary_executable"
