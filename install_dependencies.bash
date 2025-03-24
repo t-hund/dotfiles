@@ -57,3 +57,8 @@ sudo apt install xbacklight --yes
 sudo apt install xinput --yes
 
 sudo apt install compton --yes
+
+
+# i3lock dependencies
+sudo apt install imagemagick
+sudo apt install scrot
