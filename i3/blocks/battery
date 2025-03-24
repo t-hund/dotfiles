@@ -31,22 +31,22 @@ def main
 
     when percent < 40
       # |   o| Quarter
-	  icon = "&#xf243;"
+      icon = "&#xf243;"
       color = "#FFAE00"
 
     when percent < 60
       # |  oo| Half
-	  icon = "&#xf242;"
+      icon = "&#xf242;"
       color = "#FFF600"
 
     when percent < 85
       # | ooo| Thee-quarters
-	  icon = "&#xf241;"
+      icon = "&#xf241;"
       color = "#A8FF00"
 
     else
       # |oooo| Full
-	  icon = "&#xf240;"
+      icon = "&#xf240;"
       color = "#689D6A"
     end
 
