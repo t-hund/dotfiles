@@ -48,6 +48,9 @@ sudo apt install curl --yes
 sudo apt install feh --yes
 sudo apt install ranger --yes
 sudo apt install calcurse --yes
+sudo apt install rlwrap --yes
+sudo apt install redshift --yes
+
 
 # Debian
 sudo apt install xbacklight --yes
