@@ -1,0 +1,168 @@
+" Make space my leader
+let mapleader=" "
+
+" Create Todo comment
+nnoremap <leader>tt O// TODO tvt:<space>
+
+" Totally intuitive way to disable audible warnings
+" Basically, IdeaVIM reads your ~/.ideavimrc file and silently ignores any 
+" settings it does not understand. Of the bell-related settings, it does not 
+" understand :set noerrorbells, but it does understand :set visualbell. And 
+" since it has no implementation for a visual bell, it will do nothing and 
+" achieve the desired effect.
+set visualbell
+
+" Hide all tool windows
+" nnoremap <esc> :action RestoreDefaultLayout<cr>
+
+" Highlight word under cursor
+nnoremap <leader>2 :action HighlightUsagesInFile<cr>
+nnoremap <leader>h :action HighlightUsagesInFile<cr>
+
+// TODO tvt: Fixa senare
+"nmap <C-U> <Action>(Vcs.RollbackChangedLines)
+"ShowIntentionActions
+
+" Basic configuration
+set scrolloff=5
+set sidescrolloff=5
+
+
+" Load plugins
+set multiple-cursors
+set surround
+set commentary
+
+
+" Switch to the previously edited file.
+nnoremap <tab> <c-s-6>
+
+
+" Center line when jumping to back and forth in jump list
+nmap <c-o> <Action>(Back)zz
+nmap <c-i> <Action>(Forward)zz
+
+
+" Repeat search and center on the result
+nnoremap n nzz
+nnoremap N Nzz
+
+" Center on word when using * to search for next matching word
+nnoremap * *zz
+
+" Center line when jumping to bottom of file
+noremap G Gzz
+
+
+" Jump between whitespace separated lines
+nnoremap J }
+nnoremap K {
+vnoremap J }
+vnoremap K {
+
+
+" Fix broken mappings
+nnoremap <leader>j J
+vnoremap <leader>j J
+nnoremap <leader>k K
+
+" Fix inconsistent vim behavior
+nnoremap Y y$
+
+
+" Make it easy to save and quit
+nnoremap <leader>ww :action SaveAll<cr>
+nnoremap <leader>wq :action SaveAll<cr>:q<cr>
+nnoremap <leader>qq <c-w>c
+
+
+" Edit config files
+nnoremap <leader>ev :e ~/.ideavimrc<cr>
+"nnoremap <leader>ed :e Y:\definitions.md<cr>
+
+
+" Toggle distraction free mode
+nnoremap <leader>tf :action ToggleDistractionFreeMode<cr>
+
+
+" Intellij mappings
+nnoremap § :action ActivateTerminalToolWindow<cr>
+nnoremap <c-p> :action SearchEverywhere<cr>
+nnoremap <leader>or :action RecentFiles<cr>
+
+
+nnoremap <leader>gg :action Generate<cr>
+
+
+" Go places
+nmap gd gdzz
+"nnoremap <leader>gd :action GotoImplementation<cr>
+nnoremap <leader>gi :action GotoImplementation<cr>
+nnoremap <leader>fu :action FindUsages<cr>
+
+nnoremap / :action Find<cr>
+
+
+" Debugging
+nnoremap <leader>tb :action ToggleLineBreakpoint<cr>
+nnoremap <leader>dab :action Debugger.RemoveAllBreakpoints<cr>
+nnoremap <leader>dd :action Debug<cr>
+nnoremap <leader><cr> :action ChooseDebugConfiguration<cr>
+
+nnoremap <leader>oe :action EvaluateExpression<cr>
+nnoremap <leader>si :action StepInto<cr>
+nnoremap <leader>so :action StepOver<cr>
+nnoremap <leader>sh :action RunToCursor<cr>
+
+noremap <leader>dr :action Resume<cr>
+nnoremap <leader>ds :action Stop<cr>
+
+"nmap <F1> <Action>(HideAllWindows)
+nmap <leader><leader> <Action>(GotoAction)
+nmap <C-å> <Action>(FileStructurePopup)
+
+
+" Build stuff
+nnoremap <leader>bb :action BuildMenu<cr>
+
+" Run stuff
+nnoremap <cr> :action ChooseRunConfiguration<cr>
+
+
+" If all else fail, open current file in real Vim!
+"nnoremap <leader>ff :action Tool_External Tools_vim<cr>
+
+
+" Comment / Uncomment code
+nnoremap <leader>cc mc:action CommentByLineComment<cr>`c
+vnoremap <leader>cc mc:action CommentByLineComment<cr>`c
+nnoremap gcc mc:action CommentByLineComment<cr>`c
+vnoremap gcc mc:action CommentByLineComment<cr>`c
+
+nnoremap <leader>cip vip:action CommentByLineComment<cr><ESC>
+
+
+" Split navigation
+nnoremap <c-h> <c-w>h
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-l> <c-w>l
+
+
+" Create splits
+nnoremap <leader>vs :vs<cr>
+nnoremap <leader>hs :sp<cr>
+nnoremap <leader>sp :sp<cr>
+nnoremap <leader>qq :action Unsplit<cr>
+
+
+" Navigate between hunks
+" Fixa det här nån gång!
+
+
+" Refactor
+nnoremap <leader>rn :action RenameElement<cr>
+nnoremap cn :action RenameElement<cr>
+nnoremap <leader>ri :action Inline<cr>
+nnoremap <leader>rf :action Refactorings.QuickListPopupAction<cr>
+vnoremap <leader>rf :action Refactorings.QuickListPopupAction<cr>
