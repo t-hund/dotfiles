@@ -11,6 +11,9 @@ ln -sf $DOTFILES/git/config.git $HOME/.gitconfig
 ln -sf $DOTFILES/bash/init.bash $HOME/.bashrc
 ln -sf $DOTFILES/bash/init.bash $HOME/.bash_profile
 
+# Vim
+source $DOTFILES/vim/bootstrap.bash
+
 # EditorConfig
 ln -sf $DOTFILES/.editorconfig $HOME/.editorconfig
 
