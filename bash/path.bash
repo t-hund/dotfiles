@@ -9,8 +9,8 @@ export PATH="$HOME/bin:$PATH";
 export PATH="$DOTFILES/bin:$PATH";
 
 # Go
-export GOPATH="$HOME/Dropbox/code/go"
-export PATH="$GOPATH/bin:$PATH";
+export PATH="/usr/local/go/bin:$PATH"
+export PATH="$HOME/go/bin:$PATH"
 
 # Haskell Stack
 export PATH="$HOME/.local/bin:$PATH";
