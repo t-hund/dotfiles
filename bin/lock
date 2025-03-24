@@ -15,7 +15,7 @@ scrot --delay 0 --quality 1 "$screenshot"
 convert "$screenshot" -scale 10% -scale 1000% "$screenshot"
 
 # Lock the computer
-i3lock -i "$screenshot" --color=10151f
+i3lock --image="$screenshot" --color=10151f --ignore-empty-password
 
 # Remove the lock screen
 rm "$screenshot"
