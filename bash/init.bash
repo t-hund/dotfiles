@@ -13,6 +13,8 @@ source "$DOTFILES/bash/options.bash"
 source "$DOTFILES/bash/autocomplete.bash"
 source "$DOTFILES/bash/version_managers.bash"
 
+# Language specific
+source "$DOTFILES/bash/hare.bash"
 
 # initialize z   (https://github.com/rupa/z)
 source "$DOTFILES/bin/z.sh"
