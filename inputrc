@@ -39,6 +39,9 @@ set convert-meta off
 # Make Esc Esc clear command line
 "\e\e": "\C-a\C-k"
 
+# Make crtl+backspace delete whole word
+"\C-h": backward-kill-word
+
 # Vi mode
 # set editing-mode vi
 # set show-mode-in-prompt on
