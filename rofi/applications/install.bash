@@ -9,3 +9,4 @@ sudo cp shutdown.desktop /usr/share/applications/
 sudo cp ranger.desktop /usr/share/applications/
 sudo cp pico-8.desktop /usr/share/applications/
 sudo cp krita.desktop /usr/share/applications/
+sudo cp zen.desktop /usr/share/applications/

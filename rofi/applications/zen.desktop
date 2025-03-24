@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=Zen Browser
+Exec= /home/tova/bin/zen-generic.AppImage
+Terminal=false
+Type=Application
